@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App AlignCenter">
-       <UserInput username={this.state.username} changed={this.onInputChangedHandler}></UserInput>
+       <UserInput currentUsername={this.state.username} changed={this.onInputChangedHandler}></UserInput>
         <UserOutput 
           username={this.state.username}
         > 
