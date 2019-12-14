@@ -1,0 +1,27 @@
+.UserInput {
+    margin: 2px;
+}
+
+label {
+    float: center;
+    clear: both; 
+}
+
+.UserInputField {
+    border: 1px solid #bbb;
+    margin: 15px 0;
+    width: 20%;
+    font-size: 20px;
+    outline: none;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 12px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -webkit-transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -ms-transition:0.2s ease all;
+    -o-transition:0.2s ease all;
+    transition:0.2s ease all;
+}
