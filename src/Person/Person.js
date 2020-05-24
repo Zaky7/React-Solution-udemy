@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 // import "./Person.css";
 
 /**
@@ -48,26 +49,32 @@ const StyledPersonInput = styled.input`
 `;
 
 // This is a Function
-const Person = ({ deleteElement, name, age, children, changed }) => {
-  return (
-    <StyledPersonDiv>
-      <div className="Person">
-        {/* Delete Icon  */}
-        <StyledDeleteIconDiv onClick={deleteElement} onKeyDown={deleteElement}>
-          <FontAwesomeIcon className=".delete-icon" icon={faTrash} />
-        </StyledDeleteIconDiv>
+const Person = ({ deleteElement, name, age, children, changed }) => (
+  <StyledPersonDiv>
+    <div className="Person">
+      {/* Delete Icon  */}
+      <StyledDeleteIconDiv onClick={deleteElement} onKeyDown={deleteElement}>
+        <FontAwesomeIcon className=".delete-icon" icon={faTrash} />
+      </StyledDeleteIconDiv>
 
-        {/* Paragraph */}
-        <p>
-          &lsquo;I am a living Person, My name is {name} and I am {age} Old&lsquo;
-        </p>
-        <p> {children} </p>
+      {/* Paragraph */}
+      <p>
+        &lsquo;I am a living Person, My name is {name} and I am {age} Old&lsquo;
+      </p>
+      <p>{children}</p>
 
-        {/* Input Element */}
-        <StyledPersonInput type="text" onChange={changed} placeholder="Enter the username" />
-      </div>
-    </StyledPersonDiv>
-  );
+      {/* Input Element */}
+      <StyledPersonInput type="text" onChange={changed} placeholder="Enter the username" />
+    </div>
+  </StyledPersonDiv>
+);
+
+Person.propTypes = {
+  deleteElement: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number.isRequired,
+  children: PropTypes.node.isRequired,
+  changed: PropTypes.func.isRequired,
 };
 
 export default Person;

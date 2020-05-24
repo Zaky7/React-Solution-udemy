@@ -3,7 +3,12 @@
         "browser": true,
         "es6": true
     },
-    "extends": [ "airbnb", "plugin:prettier/recommended" ],
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react",
+        "plugin:react/recommended"
+    ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -21,7 +26,22 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "react/jsx-filename-extension": [1, {
-        "extensions": [".js", ".jsx"]}
-        ]}
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "arrow-parens": [
+            "error",
+            "as-needed"
+        ],
+        "arrow-body-style": [
+            2,
+            "as-needed"
+        ]
+    }
 }

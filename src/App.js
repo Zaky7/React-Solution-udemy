@@ -31,8 +31,8 @@ class App extends Component {
       persons: [
         { id: 1, name: 'Max', age: 29 },
         { id: 2, name: 'Harish', age: 17 },
-        { id: 3, name: 'Rashid', age: 34 }
-      ]
+        { id: 3, name: 'Rashid', age: 34 },
+      ],
     };
   }
 
@@ -40,10 +40,10 @@ class App extends Component {
     this.setState({
       persons: [
         { id: 1, name: 'Max', age: 29 },
-        { id: 2, name: 'Zakir', age: 17 }
+        { id: 2, name: 'Zakir', age: 17 },
         // { name: "Rashid", age: 34 }
       ],
-      showPersons: false
+      showPersons: false,
     });
   };
 
@@ -52,15 +52,15 @@ class App extends Component {
       persons: [
         { id: 1, name: 'Zakir', age: 21 },
         { id: 2, name: event.target.value, age: 21 },
-        { id: 3, name: 'Rashid', age: 34 }
-      ]
+        { id: 3, name: 'Rashid', age: 34 },
+      ],
     });
   };
 
   togglePersonVisibility = () => {
     const { showPersons } = this.state;
     this.setState({
-      showPersons: !showPersons
+      showPersons: !showPersons,
     });
   };
 
@@ -69,7 +69,7 @@ class App extends Component {
     const personIndex = persons.findIndex(person => person.id === id);
 
     const person = {
-      ...persons[personIndex]
+      ...persons[personIndex],
     };
 
     person.name = event.target.value;
@@ -77,7 +77,7 @@ class App extends Component {
     const newPersons = [...persons];
     newPersons[personIndex] = person;
     this.setState({
-      persons: newPersons
+      persons: newPersons,
     });
   };
 
@@ -89,7 +89,7 @@ class App extends Component {
       const newPersons = [...persons];
       newPersons.splice(index, 1);
       this.setState({
-        persons: newPersons
+        persons: newPersons,
       });
     }
   };
@@ -103,7 +103,7 @@ class App extends Component {
       padding: '8px 20px',
       cursor: 'pointer',
       borderRadius: '18px',
-      color: 'white'
+      color: 'white',
     };
 
     let personList = null;
@@ -121,18 +121,16 @@ class App extends Component {
     if (showPersons) {
       personList = (
         <div>
-          {persons.map(person => {
-            return (
-              <Person
-                deleteElement={() => this.deletePersonHandler(person.id)}
-                key={person.id}
-                name={person.name}
-                age={person.age}
-                Id={person.id}
-                changed={event => this.nameChangeHandler(event, person.id)}
-              />
-            );
-          })}
+          {persons.map(person => (
+            <Person
+              deleteElement={() => this.deletePersonHandler(person.id)}
+              key={person.id}
+              name={person.name}
+              age={person.age}
+              Id={person.id}
+              changed={event => this.nameChangeHandler(event, person.id)}
+            />
+          ))}
         </div>
       );
 
@@ -144,12 +142,14 @@ class App extends Component {
         <StyledButton showPerson={showPersons} type="button" onClick={this.togglePersonVisibility}>
           Switch Name
         </StyledButton>
-        <StyledParagraph personsLength={persons.length}>This is paragraph written by me!!</StyledParagraph>
+        <StyledParagraph personsLength={persons.length}>
+          This is paragraph written by me!!
+        </StyledParagraph>
         {personList}
       </div>
     );
-
-    // return React.createElement('div', {className: 'App' }, React.createElement('h1', null, 'I am writing React App for the First Time'))
+    // return React.createElement('div', {className: 'App' },
+    // React.createElement('h1', null, 'I am writing React App for the First Time'))
   }
 }
 
