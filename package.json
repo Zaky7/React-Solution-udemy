@@ -29,13 +29,13 @@
     "prettier:fix": "prettier --write \"src\"",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
-    "commit": "npm run git-cz"
+    "commit": "yarn run git-cz"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "pretty-quick --staged",
-      "npm run prettier",
-      "npm run lint"
+      "yarn run prettier",
+      "yarn run lint"
     ]
   },
   "husky": {

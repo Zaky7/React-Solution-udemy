@@ -7,7 +7,7 @@ import Person from './Person/Person';
 const StyledButton = styled.button`
   background-color: ${props => (props.showPerson ? 'red' : 'green')};
   font: inherit;
-  border: 1px solid blue;
+  border: 1px solid transparent;
   padding: 8px 20px;
   cursor: pointer;
   border-radius: 18px;
@@ -16,6 +16,7 @@ const StyledButton = styled.button`
   &:hover {
     background-color: ${props => (props.showPerson ? 'salmon' : 'lightgreen')};
     color: black;
+    outline: none !important;
   }
 `;
 
