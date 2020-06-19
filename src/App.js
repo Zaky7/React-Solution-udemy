@@ -1,29 +1,7 @@
 // eslint-disable-max-classes-per-file: "error"
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import './App.css';
+import styles from './App.module.scss';
 import Person from './Person/Person';
-
-const StyledButton = styled.button`
-  background-color: ${props => (props.showPerson ? 'red' : 'green')};
-  font: inherit;
-  border: 1px solid transparent;
-  padding: 8px 20px;
-  cursor: pointer;
-  border-radius: 18px;
-  color: white;
-
-  &:hover {
-    background-color: ${props => (props.showPerson ? 'salmon' : 'lightgreen')};
-    color: black;
-    outline: none !important;
-  }
-`;
-
-const StyledParagraph = styled.p`
-  font-weight: ${props => (props.personsLength <= 1 ? 'bold' : 'normal')};
-  color: ${props => (props.personsLength <= 2 ? 'red' : 'black')};
-`;
 
 class App extends Component {
   constructor(props) {
@@ -110,15 +88,6 @@ class App extends Component {
     let personList = null;
     const { showPersons, persons } = this.state;
 
-    // const paragraphClasses = [];
-    // if (persons.length <= 2) {
-    //   paragraphClasses.push('red');
-    // }
-
-    // if (persons.length <= 1) {
-    //   paragraphClasses.push('bold');
-    // }
-
     if (showPersons) {
       personList = (
         <div>
@@ -139,18 +108,14 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <StyledButton showPerson={showPersons} type="button" onClick={this.togglePersonVisibility}>
-          Switch Name
-        </StyledButton>
-        <StyledParagraph personsLength={persons.length}>
-          This is paragraph written by me!!
-        </StyledParagraph>
+      <div className={styles.App}>
+        <button className={styles.Button} type="button" onClick={this.togglePersonVisibility}>
+          Show Persons
+        </button>
+        <p className={styles.Paragraph}>This is paragraph written by me!!</p>
         {personList}
       </div>
     );
-    // return React.createElement('div', {className: 'App' },
-    // React.createElement('h1', null, 'I am writing React App for the First Time'))
   }
 }
 

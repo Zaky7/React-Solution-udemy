@@ -39,3 +39,29 @@
 .bold {
   font-weight: bold;
 }
+
+.Button {
+  background-color: green;
+  font: inherit;
+  border: 1px solid transparent;
+  padding: 8px 20px;
+  cursor: pointer;
+  border-radius: 18px;
+  color: white;
+  outline: none !important;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:hover {
+    background-color: salmon;
+    color: black;
+    outline: none !important;
+  }
+}
+
+.Paragraph {
+  font-weight: 'bold';
+  color: black;
+}
