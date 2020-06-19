@@ -63,12 +63,12 @@
       "value": "#42b883"
     }
   ],
-  "editor.autoIndent": true,
+  "editor.autoIndent": "keep",
   "editor.codeActionsOnSave": {
     "source.organizeImports": false
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.codeLens": false,
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": true,
@@ -86,7 +86,5 @@
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "editor.wordWrap": "off",
-  "eslint.workingDirectories": [
-    "./src"
-  ]
+  "eslint.workingDirectories": ["./src"]
 }
