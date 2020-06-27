@@ -93,8 +93,8 @@ class App extends Component {
         <div>
           {persons.map(person => (
             <Person
-              deleteElement={() => this.deletePersonHandler(person.id)}
               key={person.id}
+              deleteElement={() => this.deletePersonHandler(person.id)}
               name={person.name}
               age={person.age}
               Id={person.id}

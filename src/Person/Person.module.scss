@@ -78,3 +78,9 @@ Paragraph/* .Person {
   color: black;
   transition: 0.6s ease all;
 }
+
+@media (min-width: 500px) {
+  .PersonDiv {
+    width: 450px;
+  }
+}
