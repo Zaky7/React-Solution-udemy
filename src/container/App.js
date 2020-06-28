@@ -1,7 +1,8 @@
 // eslint-disable-max-classes-per-file: "error"
 import React, { Component } from 'react';
 import styles from './App.module.scss';
-import Person from './Person/Person';
+import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
   constructor(props) {
@@ -90,18 +91,11 @@ class App extends Component {
 
     if (showPersons) {
       personList = (
-        <div>
-          {persons.map(person => (
-            <Person
-              deleteElement={() => this.deletePersonHandler(person.id)}
-              key={person.id}
-              name={person.name}
-              age={person.age}
-              Id={person.id}
-              changed={event => this.nameChangeHandler(event, person.id)}
-            />
-          ))}
-        </div>
+        <Persons
+          persons={persons}
+          clicked={this.deletePersonHandler}
+          changed={this.nameChangeHandler}
+        />
       );
 
       style.backgroundColor = '#0087ff';
@@ -109,11 +103,7 @@ class App extends Component {
 
     return (
       <div className={styles.App}>
-        <button className={styles.Button} type="button" onClick={this.togglePersonVisibility}>
-          Show Persons
-        </button>
-        <p className={styles.Paragraph}>This is paragraph written by me!!</p>
-        {personList}
+        <Cockpit clicked={this.togglePersonVisibility}>{personList}</Cockpit>
       </div>
     );
   }
