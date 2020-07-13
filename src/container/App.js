@@ -16,6 +16,19 @@ class App extends Component {
     };
   }
 
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] getDerivedStateFromProps...', props, state);
+    return state;
+  }
+
+  UNSAFE_componentWillMount() {
+    console.log('[App.js] componentWillMount render');
+  }
+
+  componentDidMount() {
+    console.log('[App.js componentDidMount...');
+  }
+
   switchNameHandler = () => {
     this.setState({
       persons: [
@@ -75,6 +88,7 @@ class App extends Component {
   };
 
   render() {
+    console.log('[App.js] render..');
     // Inline style
     const style = {
       backgroundColor: 'green',

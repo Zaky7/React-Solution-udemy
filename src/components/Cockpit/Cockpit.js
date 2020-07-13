@@ -12,7 +12,7 @@ const Cockpit = props => {
         Show Persons
       </button>
       <p className={styles.Paragraph}>This is paragraph written by me!!</p>
-      {children}
+      {children} 
     </>
   );
 };

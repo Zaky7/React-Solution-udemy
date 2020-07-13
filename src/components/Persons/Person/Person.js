@@ -6,8 +6,10 @@ import PropTypes from 'prop-types';
 import styles from './Person.module.scss';
 
 // This is a Function
-const Person = ({ deleteElement, name, age, changed }) => (
-  <div className={styles.PersonDiv}>
+const Person = ({ deleteElement, name, age, changed }) => {
+  console.log('[Person.js render...');
+
+  return <div className={styles.PersonDiv}>
     <div className="Person">
       {/* Delete Icon  */}
       <div className={styles.DeleteIconDiv} onClick={deleteElement} onKeyDown={deleteElement}>
@@ -27,7 +29,7 @@ const Person = ({ deleteElement, name, age, changed }) => (
       />
     </div>
   </div>
-);
+};
 
 Person.propTypes = {
   deleteElement: PropTypes.func.isRequired,
